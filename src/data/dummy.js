@@ -2596,7 +2596,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[0],
     xName: "x",
     yName: "y",
-    name: "Germany",
+    name: "PM",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2606,7 +2606,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[1],
     xName: "x",
     yName: "y",
-    name: "England",
+    name: "EM",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2616,7 +2616,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[2],
     xName: "x",
     yName: "y",
-    name: "India",
+    name: "GM",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2624,13 +2624,10 @@ export const lineCustomSeries = [
 ];
 
 export const pieChartData = [
-  { x: "Labour", y: 18, text: "18%" },
-  { x: "Legal", y: 8, text: "8%" },
-  { x: "Production", y: 15, text: "15%" },
-  { x: "License", y: 11, text: "11%" },
-  { x: "Facilities", y: 18, text: "18%" },
-  { x: "Taxes", y: 14, text: "14%" },
-  { x: "Insurance", y: 16, text: "16%" },
+  { x: "PM", y: 18, text: "18%" },
+  { x: "EM", y: 8, text: "8%" },
+  { x: "GM", y: 15, text: "15%" },
+  { x: "CM", y: 11, text: "11%" },
 ];
 
 export const contextMenuItems = [
@@ -2653,32 +2650,30 @@ export const contextMenuItems = [
 ];
 
 export const ecomPieChartData = [
-  { x: "مهر", y: 18, text: "35%" },
-  { x: "آبان", y: 18, text: "15%" },
-  { x: "آذر", y: 18, text: "25%" },
-  { x: "دی", y: 18, text: "25%" },
-  { x: "بهمن", y: 18, text: "25%" },
-  { x: "اسفند", y: 18, text: "25%" },
+  { x: "مهر", y: 24, text: "35%" },
+  { x: "آبان", y: 24, text: "15%" },
+  { x: "آذر", y: 24, text: "25%" },
+  { x: "دی", y: 24, text: "25%" },
+  { x: "بهمن", y: 24, text: "25%" },
+  { x: "اسفند", y: 24, text: "25%" },
 ];
 
 export const stackedChartData = [
   [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
+    { x: "مهر", y: 111.1 },
+    { x: "آبان", y: 127.3 },
+    { x: "آذر", y: 143.4 },
+    { x: "دی", y: 159.9 },
+    { x: "بهمن", y: 159.9 },
+    { x: "اسفند", y: 159.9 },
   ],
   [
-    { x: "Jan", y: 111.1 },
-    { x: "Feb", y: 127.3 },
-    { x: "Mar", y: 143.4 },
-    { x: "Apr", y: 159.9 },
-    { x: "May", y: 159.9 },
-    { x: "Jun", y: 159.9 },
-    { x: "July", y: 159.9 },
+    { x: "مهر", y: 111.1 },
+    { x: "آبان", y: 127.3 },
+    { x: "آذر", y: 143.4 },
+    { x: "دی", y: 159.9 },
+    { x: "بهمن", y: 159.9 },
+    { x: "اسفند", y: 159.9 },
   ],
 ];
 
