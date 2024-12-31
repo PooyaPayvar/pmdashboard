@@ -12,7 +12,6 @@ import { CiWarning } from "react-icons/ci";
 import {
   FiShoppingBag,
   FiPieChart,
-  FiBarChart,
   FiCreditCard,
   FiStar,
   FiShoppingCart,
@@ -20,14 +19,12 @@ import {
 import {
   BsKanban,
   BsBarChart,
-  BsBoxSeam,
   BsCurrencyDollar,
   BsShield,
   BsChatLeft,
 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
-import { HiOutlineRefresh } from "react-icons/hi";
 import { TiTick } from "react-icons/ti";
 import { GiLouvrePyramid } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
@@ -2660,6 +2657,14 @@ export const ecomPieChartData = [
   { x: "2019", y: 18, text: "15%" },
   { x: "2020", y: 18, text: "25%" },
   { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
+  { x: "2021", y: 18, text: "25%" },
 ];
 
 export const stackedChartData = [
@@ -2688,7 +2693,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[0],
     xName: "x",
     yName: "y",
-    name: "Budget",
+    name: "PM",
     type: "StackingColumn",
     background: "blue",
   },
@@ -2697,7 +2702,7 @@ export const stackedCustomSeries = [
     dataSource: stackedChartData[1],
     xName: "x",
     yName: "y",
-    name: "Expense",
+    name: "EM",
     type: "StackingColumn",
     background: "red",
   },
