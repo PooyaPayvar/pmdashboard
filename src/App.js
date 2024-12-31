@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
@@ -16,11 +15,11 @@ import {
   Area,
   Bar,
   Pie,
-  Financial,
   ColorMapping,
 } from "./pages";
 import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
+
 const App = () => {
   const {
     setCurrentColor,
@@ -39,7 +38,8 @@ const App = () => {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
-  }, []);
+  }, [setCurrentColor, setCurrentMode]); // Include dependencies here
+
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
@@ -77,28 +77,24 @@ const App = () => {
             </div>
             <div>
               {themeSettings && <ThemeSettings />}
-
               <Routes>
-                {/* dashboard  */}
+                {/* Dashboard  */}
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/dashboard" element={<Dashboard />} />
 
-                {/* pages  */}
-                {/* <Route path="/orders" element={<Orders />} /> */}
-                {/* <Route path="/employees" element={<Employees />} /> */}
+                {/* Pages */}
                 <Route path="/forms" element={<Forms />} />
                 <Route path="/submitform" element={<SubmitForm />} />
 
-                {/* apps  */}
+                {/* Applications */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/calendar" element={<Calendar />} />
 
-                {/* charts  */}
+                {/* Charts */}
                 <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
                 <Route path="/color-mapping" element={<ColorMapping />} />
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>

@@ -10,18 +10,10 @@ import { GrHostMaintenance } from "react-icons/gr";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { CiWarning } from "react-icons/ci";
 import { FaWpforms } from "react-icons/fa6";
-import {
-  FiShoppingBag,
-  FiPieChart,
-  FiCreditCard,
-} from "react-icons/fi";
-import {
-  BsKanban,
-  BsBarChart,
-  BsShield,
-} from "react-icons/bs";
+import { FiShoppingBag, FiPieChart, FiCreditCard } from "react-icons/fi";
+import { BsKanban, BsBarChart, BsShield } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { RiContactsLine, RiStockLine } from "react-icons/ri";
+import { RiContactsLine } from "react-icons/ri";
 import { GrLocation } from "react-icons/gr";
 import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
@@ -215,7 +207,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: "x",
     yName: "y",
-    name: "USA",
+    name: "PM",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -224,7 +216,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[1],
     xName: "x",
     yName: "y",
-    name: "France",
+    name: "EM",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -233,7 +225,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[2],
     xName: "x",
     yName: "y",
-    name: "Germany",
+    name: "CM",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -242,19 +234,19 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: "USA", y: 46 },
-    { x: "GBR", y: 27 },
-    { x: "CHN", y: 26 },
+    { x: "PM", y: 46 },
+    { x: "EM", y: 27 },
+    { x: "CM", y: 26 },
   ],
   [
-    { x: "USA", y: 37 },
-    { x: "GBR", y: 23 },
-    { x: "CHN", y: 18 },
+    { x: "PM", y: 37 },
+    { x: "EM", y: 23 },
+    { x: "CM", y: 18 },
   ],
   [
-    { x: "USA", y: 38 },
-    { x: "GBR", y: 17 },
-    { x: "CHN", y: 26 },
+    { x: "PM", y: 38 },
+    { x: "EM", y: 17 },
+    { x: "CM", y: 26 },
   ],
 ];
 
@@ -263,7 +255,7 @@ export const barCustomSeries = [
     dataSource: barChartData[0],
     xName: "x",
     yName: "y",
-    name: "Gold",
+    name: "Press",
     type: "Column",
     marker: {
       dataLabel: {
@@ -277,7 +269,7 @@ export const barCustomSeries = [
     dataSource: barChartData[1],
     xName: "x",
     yName: "y",
-    name: "Silver",
+    name: "Refiner",
     type: "Column",
     marker: {
       dataLabel: {
@@ -291,7 +283,7 @@ export const barCustomSeries = [
     dataSource: barChartData[2],
     xName: "x",
     yName: "y",
-    name: "Bronze",
+    name: "Sanding",
     type: "Column",
     marker: {
       dataLabel: {
@@ -323,17 +315,17 @@ export const colorMappingData = [
 ];
 
 export const rangeColorMapping = [
-  { label: "1°C to 10°C", start: "1", end: "10", colors: colorMappingData[1] },
+  { label: "1 to 10", start: "1", end: "10", colors: colorMappingData[1] },
 
   {
-    label: "11°C to 20°C",
+    label: "11 to 20",
     start: "11",
     end: "20",
     colors: colorMappingData[2],
   },
 
   {
-    label: "21°C to 30°C",
+    label: "21 to 30",
     start: "21",
     end: "30",
     colors: colorMappingData[3],
@@ -350,8 +342,8 @@ export const ColorMappingPrimaryYAxis = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
-  labelFormat: "{value}°C",
-  title: "Temperature",
+  labelFormat: "{value}",
+  title: "Number of Forms",
 };
 
 export const FinancialPrimaryXAxis = {
@@ -571,10 +563,6 @@ export const links = [
       {
         name: "pie",
         icon: <FiPieChart />,
-      },
-      {
-        name: "financial",
-        icon: <RiStockLine />,
       },
       {
         name: "color-mapping",
