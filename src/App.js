@@ -9,8 +9,8 @@ import {
   Dashboard,
   Calendar,
   Stacked,
-  Pyramid,
   Forms,
+  SubmitForm,
   Kanban,
   Line,
   Area,
@@ -87,6 +87,7 @@ const App = () => {
                 {/* <Route path="/orders" element={<Orders />} /> */}
                 {/* <Route path="/employees" element={<Employees />} /> */}
                 <Route path="/forms" element={<Forms />} />
+                <Route path="/submitform" element={<SubmitForm />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
@@ -99,7 +100,6 @@ const App = () => {
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
                 <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>
             </div>

@@ -20,7 +20,7 @@ class SparkLine extends React.PureComponent {
         border={{ color: currentColor, width: 2 }}
         tooltipSettings={{
           visible: true,
-          format: `${x} : data ${yval}`,
+          format: "${x} : data ${yval}",
           trackLineSettings: {
             visible: true,
           },

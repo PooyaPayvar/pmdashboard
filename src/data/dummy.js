@@ -9,24 +9,19 @@ import { CgDanger } from "react-icons/cg";
 import { GrHostMaintenance } from "react-icons/gr";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { CiWarning } from "react-icons/ci";
+import { FaWpforms } from "react-icons/fa6";
 import {
   FiShoppingBag,
   FiPieChart,
   FiCreditCard,
-  FiStar,
-  FiShoppingCart,
 } from "react-icons/fi";
 import {
   BsKanban,
   BsBarChart,
-  BsCurrencyDollar,
   BsShield,
-  BsChatLeft,
 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
-import { TiTick } from "react-icons/ti";
-import { GiLouvrePyramid } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
 import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
@@ -538,6 +533,10 @@ export const links = [
         name: "forms",
         icon: <RiContactsLine />,
       },
+      {
+        name: "submitform",
+        icon: <FaWpforms />,
+      },
     ],
   },
   {
@@ -582,10 +581,6 @@ export const links = [
         icon: <BsBarChart />,
       },
       {
-        name: "pyramid",
-        icon: <GiLouvrePyramid />,
-      },
-      {
         name: "stacked",
         icon: <AiOutlineBarChart />,
       },
@@ -616,27 +611,9 @@ export const cartData = [
 
 export const chatData = [
   {
-    image: avatar2,
-    message: "Roman Joined the Team!",
-    desc: "Congratulate him",
-    time: "9:08 AM",
-  },
-  {
-    image: avatar3,
-    message: "New message received",
-    desc: "Salma sent you new message",
-    time: "11:56 AM",
-  },
-  {
-    image: avatar4,
-    message: "New Payment received",
-    desc: "Check your earnings",
-    time: "4:39 AM",
-  },
-  {
     image: avatar,
-    message: "Jolly completed tasks",
-    desc: "Assign her new tasks",
+    message: "Pooya Added A New task",
+    desc: "Sanding Push Feeder Problem",
     time: "1:12 AM",
   },
 ];
@@ -679,163 +656,6 @@ export const earningData = [
     pcColor: "red-600",
   },
 ];
-
-export const recentTransactions = [
-  {
-    icon: <BsCurrencyDollar />,
-    amount: "+$350",
-    title: "Paypal Transfer",
-    desc: "Money Added",
-    iconColor: "#03C9D7",
-    iconBg: "#E5FAFB",
-    pcColor: "green-600",
-  },
-  {
-    icon: <BsShield />,
-    amount: "-$560",
-    desc: "Bill Payment",
-    title: "Wallet",
-    iconColor: "rgb(0, 194, 146)",
-    iconBg: "rgb(235, 250, 242)",
-    pcColor: "red-600",
-  },
-  {
-    icon: <FiCreditCard />,
-    amount: "+$350",
-    title: "Credit Card",
-    desc: "Money reversed",
-    iconColor: "rgb(255, 244, 229)",
-    iconBg: "rgb(254, 201, 15)",
-
-    pcColor: "green-600",
-  },
-  {
-    icon: <TiTick />,
-    amount: "+$350",
-    title: "Bank Transfer",
-    desc: "Money Added",
-
-    iconColor: "rgb(228, 106, 118)",
-    iconBg: "rgb(255, 244, 229)",
-    pcColor: "green-600",
-  },
-  {
-    icon: <BsCurrencyDollar />,
-    amount: "-$50",
-    percentage: "+38%",
-    title: "Refund",
-    desc: "Payment Sent",
-    iconColor: "#03C9D7",
-    iconBg: "#E5FAFB",
-    pcColor: "red-600",
-  },
-];
-
-export const weeklyStats = [
-  {
-    icon: <FiShoppingCart />,
-    amount: "-$560",
-    title: "Top Sales",
-    desc: "Johnathan Doe",
-    iconBg: "#FB9678",
-    pcColor: "red-600",
-  },
-  {
-    icon: <FiStar />,
-    amount: "-$560",
-    title: "Best Seller",
-    desc: "MaterialPro Admin",
-    iconBg: "rgb(254, 201, 15)",
-    pcColor: "red-600",
-  },
-  {
-    icon: <BsChatLeft />,
-    amount: "+$560",
-    title: "Most Commented",
-    desc: "Ample Admin",
-    iconBg: "#00C292",
-    pcColor: "green-600",
-  },
-];
-
-export const productsPerformance = [
-  {
-    image: product5,
-    title: "Is it good butterscotch ice-cream?",
-    desc: "Ice-Cream, Milk, Powder",
-    rating: "Good",
-    itemSold: "65%",
-    earningAmount: "$546,000",
-  },
-  {
-    image: product6,
-    title: "Supreme fresh tomato available",
-    desc: "Market, Mall",
-    rating: "Excellent",
-    itemSold: "98%",
-    earningAmount: "$780,000",
-  },
-  {
-    image: product7,
-    title: "Red color candy from Gucci",
-    desc: "Chocolate, Yummy",
-    rating: "Average",
-    itemSold: "46%",
-    earningAmount: "$457,000",
-  },
-  {
-    image: product4,
-    title: "Stylish night lamp for night",
-    desc: "Electric, Wire, Current",
-    rating: "Poor",
-    itemSold: "23%",
-    earningAmount: "$123,000",
-  },
-];
-
-export const medicalproBranding = {
-  data: [
-    {
-      title: "Due Date",
-      desc: "Oct 23, 2021",
-    },
-    {
-      title: "Budget",
-      desc: "$98,500",
-    },
-    {
-      title: "Expense",
-      desc: "$63,000",
-    },
-  ],
-  teams: [
-    {
-      name: "Bootstrap",
-      color: "orange",
-    },
-    {
-      name: "Angular",
-      color: "#FB9678",
-    },
-  ],
-  leaders: [
-    {
-      image: avatar2,
-    },
-    {
-      image: avatar3,
-    },
-    {
-      image: avatar2,
-    },
-    {
-      image: avatar4,
-    },
-    {
-      image: avatar,
-    },
-  ],
-};
 
 export const themeColors = [
   {
