@@ -7,12 +7,10 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Dashboard,
-  Orders,
   Calendar,
-  Employees,
   Stacked,
   Pyramid,
-  Customers,
+  Forms,
   Kanban,
   Line,
   Area,
@@ -86,9 +84,9 @@ const App = () => {
                 <Route path="/dashboard" element={<Dashboard />} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                {/* <Route path="/orders" element={<Orders />} /> */}
+                {/* <Route path="/employees" element={<Employees />} /> */}
+                <Route path="/forms" element={<Forms />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />

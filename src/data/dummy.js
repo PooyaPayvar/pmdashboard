@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AiOutlineCalendar,
-  AiOutlineShoppingCart,
   AiOutlineAreaChart,
   AiOutlineBarChart,
   AiOutlineStock,
@@ -23,8 +22,6 @@ import {
   BsChatLeft,
 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { BiColorFill } from "react-icons/bi";
-import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
 import { HiOutlineRefresh } from "react-icons/hi";
@@ -42,7 +39,6 @@ import product4 from "./product4.jpg";
 import product5 from "./product5.jpg";
 import product6 from "./product6.jpg";
 import product7 from "./product7.jpg";
-import product8 from "./product8.jpg";
 
 export const gridOrderImage = (props) => (
   <div>
@@ -523,16 +519,12 @@ export const links = [
   {
     title: "Pages",
     links: [
+      // {
+      //   name: "orders",
+      //   icon: <AiOutlineShoppingCart />,
+      // },
       {
-        name: "orders",
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: "employees",
-        icon: <IoMdContacts />,
-      },
-      {
-        name: "customers",
+        name: "forms",
         icon: <RiContactsLine />,
       },
     ],
@@ -641,7 +633,7 @@ export const chatData = [
 export const earningData = [
   {
     icon: <MdOutlineSupervisorAccount />,
-    amount: "39,354",
+    amount: "395",
     percentage: "-4%",
     title: "Customers",
     iconColor: "#03C9D7",
@@ -669,7 +661,7 @@ export const earningData = [
   },
   {
     icon: <HiOutlineRefresh />,
-    amount: "39,354",
+    amount: "395",
     percentage: "-12%",
     title: "Refunds",
     iconColor: "rgb(0, 194, 146)",
