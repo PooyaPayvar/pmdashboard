@@ -8,7 +8,6 @@ import {
 } from "react-icons/ai";
 import {
   FiShoppingBag,
-  FiEdit,
   FiPieChart,
   FiBarChart,
   FiCreditCard,
@@ -23,6 +22,7 @@ import {
   BsShield,
   BsChatLeft,
 } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
 import { BiColorFill } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
@@ -514,7 +514,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "ecommerce",
+        name: "dashboard",
         icon: <FiShoppingBag />,
       },
     ],
@@ -864,7 +864,7 @@ export const themeColors = [
 
 export const userProfileData = [
   {
-    icon: <BsCurrencyDollar />,
+    icon: <CgProfile />,
     title: "My Profile",
     desc: "Account Settings",
     iconColor: "#03C9D7",
