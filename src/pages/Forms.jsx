@@ -15,7 +15,7 @@ import {
 import { customersData, customersGrid } from "../data/dummy";
 import { Header } from "../components";
 
-const Customers = () => {
+function Customers() {
   const selectionsettings = { persistSelection: true };
   const toolbarOptions = ["Delete"];
   const editing = { allowDeleting: true, allowEditing: true };
@@ -43,6 +43,6 @@ const Customers = () => {
       </GridComponent>
     </div>
   );
-};
+}
 
 export default Customers;

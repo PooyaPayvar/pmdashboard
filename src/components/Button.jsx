@@ -2,7 +2,7 @@ import React from "react";
 
 import { useStateContext } from "../contexts/ContextProvider";
 
-const Button = ({
+function Button  ({
   icon,
   bgColor,
   color,
@@ -11,7 +11,7 @@ const Button = ({
   text,
   borderRadius,
   width,
-}) => {
+})  {
   const { setIsClicked, initialState } = useStateContext();
 
   return (

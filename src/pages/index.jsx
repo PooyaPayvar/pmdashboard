@@ -2,6 +2,7 @@ export { default as Dashboard } from "./Dashboard";
 export { default as Kanban } from "./Kanban";
 export { default as Orders } from "./Orders";
 export { default as SubmitForm } from "./SubmitForm";
+export { default as Login } from "./Login";
 // export { default as Employees } from "./Employees";
 export { default as Forms } from "./Forms";
 export { default as Calendar } from "./Calendar";

@@ -19,7 +19,7 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
-const Dashboard = () => {
+function Dashboard() {
   const { currentMode } = useStateContext();
 
   return (
@@ -109,6 +109,6 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
@@ -13,10 +13,12 @@ import {
   Kanban,
   Line,
   Area,
+  Login,
   Bar,
   Pie,
   ColorMapping,
 } from "./pages";
+
 import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
 
@@ -30,7 +32,7 @@ const App = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const currentThemeColor = localStorage.getItem("colorMode");
     const currentThemeMode = localStorage.getItem("themeMode");
@@ -38,7 +40,10 @@ const App = () => {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
-  }, [setCurrentColor, setCurrentMode]); // Include dependencies here
+  }, [setCurrentColor, setCurrentMode]);
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
@@ -78,25 +83,33 @@ const App = () => {
             <div>
               {themeSettings && <ThemeSettings />}
               <Routes>
-                {/* Dashboard  */}
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route
+                  index
+                  element={
+                    isLoggedIn ? (
+                      <Navigate to="/sidebar" />
+                    ) : (
+                      <Login onLogin={handleLogin} />
+                    )
+                  }
+                ></Route>
+                <Route path="/dashboard" element={<Dashboard />}></Route>
 
                 {/* Pages */}
-                <Route path="/forms" element={<Forms />} />
-                <Route path="/submitform" element={<SubmitForm />} />
+                <Route path="/forms" element={<Forms />}></Route>
+                <Route path="/submitform" element={<SubmitForm />}></Route>
 
                 {/* Applications */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/kanban" element={<Kanban />}></Route>
+                <Route path="/calendar" element={<Calendar />}></Route>
 
                 {/* Charts */}
-                <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/stacked" element={<Stacked />} />
+                <Route path="/line" element={<Line />}></Route>
+                <Route path="/area" element={<Area />}></Route>
+                <Route path="/bar" element={<Bar />}></Route>
+                <Route path="/pie" element={<Pie />}></Route>
+                <Route path="/color-mapping" element={<ColorMapping />}></Route>
+                <Route path="/stacked" element={<Stacked />}></Route>
               </Routes>
             </div>
             <Footer />
