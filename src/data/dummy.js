@@ -517,16 +517,12 @@ export const links = [
   {
     title: "Pages",
     links: [
-      // {
-      //   name: "orders",
-      //   icon: <AiOutlineShoppingCart />,
-      // },
       {
         name: "forms",
         icon: <RiContactsLine />,
       },
       {
-        name: "submitform",
+        name: "operatorSubmit",
         icon: <FaWpforms />,
       },
     ],

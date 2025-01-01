@@ -5,7 +5,7 @@ import axios from "axios";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import "./submitstyle.css";
 
-function SubmitForm() {
+function TechnicianSubmit() {
   const [values, setValues] = useState({
     formcode: "",
     section: "",
@@ -38,7 +38,7 @@ function SubmitForm() {
   return (
     <div id="body">
       <div className="container">
-        <header>Operator Submit Form</header>
+        <header>Technician Submit Form</header>
         <form onSubmit={handleSubmit}>
           <div className="form first">
             <div className="details personal">
@@ -208,4 +208,4 @@ function SubmitForm() {
   );
 }
 
-export default SubmitForm;
+export default TechnicianSubmit;

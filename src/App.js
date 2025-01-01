@@ -3,13 +3,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Sidebar, ThemeSettings } from "./components";
 import {
   Dashboard,
   Calendar,
   Stacked,
   Forms,
-  SubmitForm,
+  OperatorSubmit,
   Kanban,
   Line,
   Area,
@@ -32,7 +32,7 @@ const App = () => {
     themeSettings,
     setThemeSettings,
   } = useStateContext();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Set default to false to enable login
   useEffect(() => {
     const currentThemeColor = localStorage.getItem("colorMode");
     const currentThemeMode = localStorage.getItem("themeMode");
@@ -49,70 +49,76 @@ const App = () => {
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
-          <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-            <TooltipComponent content="Settings" position="Top">
-              <button
-                type="button"
-                onClick={() => setThemeSettings(true)}
-                style={{ background: currentColor, borderRadius: "50%" }}
-                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
-              >
-                <FiSettings />
-              </button>
-            </TooltipComponent>
-          </div>
-          {activeMenu ? (
+          {isLoggedIn && (
+            <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
+              <TooltipComponent content="Settings" position="Top">
+                <button
+                  type="button"
+                  onClick={() => setThemeSettings(true)}
+                  style={{ background: currentColor, borderRadius: "50%" }}
+                  className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+                >
+                  <FiSettings />
+                </button>
+              </TooltipComponent>
+            </div>
+          )}
+          {activeMenu && isLoggedIn ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar />
-            </div>
+            isLoggedIn && (
+              <div className="w-0 dark:bg-secondary-dark-bg">
+                <Sidebar />
+              </div>
+            )
           )}
           <div
             className={
-              activeMenu
+              activeMenu && isLoggedIn
                 ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
                 : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
             }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-              <Navbar />
-            </div>
+            {isLoggedIn && (
+              <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+                <Navbar />
+              </div>
+            )}
             <div>
               {themeSettings && <ThemeSettings />}
               <Routes>
                 <Route
-                  index
+                  path="/"
                   element={
                     isLoggedIn ? (
-                      <Navigate to="/sidebar" />
+                      <Navigate to="/dashboard" />
                     ) : (
                       <Login onLogin={handleLogin} />
                     )
                   }
-                ></Route>
-                <Route path="/dashboard" element={<Dashboard />}></Route>
-
-                {/* Pages */}
-                <Route path="/forms" element={<Forms />}></Route>
-                <Route path="/submitform" element={<SubmitForm />}></Route>
-
-                {/* Applications */}
-                <Route path="/kanban" element={<Kanban />}></Route>
-                <Route path="/calendar" element={<Calendar />}></Route>
-
-                {/* Charts */}
-                <Route path="/line" element={<Line />}></Route>
-                <Route path="/area" element={<Area />}></Route>
-                <Route path="/bar" element={<Bar />}></Route>
-                <Route path="/pie" element={<Pie />}></Route>
-                <Route path="/color-mapping" element={<ColorMapping />}></Route>
-                <Route path="/stacked" element={<Stacked />}></Route>
+                />
+                {isLoggedIn && (
+                  <>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/forms" element={<Forms />} />
+                    <Route
+                      path="/operatorsubmit"
+                      element={<OperatorSubmit />}
+                    />
+                    <Route path="/kanban" element={<Kanban />} />
+                    <Route path="/calendar" element={<Calendar />} />
+                    <Route path="/line" element={<Line />} />
+                    <Route path="/area" element={<Area />} />
+                    <Route path="/bar" element={<Bar />} />
+                    <Route path="/pie" element={<Pie />} />
+                    <Route path="/color-mapping" element={<ColorMapping />} />
+                    <Route path="/stacked" element={<Stacked />} />
+                  </>
+                )}
               </Routes>
             </div>
-            <Footer />
           </div>
         </div>
       </BrowserRouter>
