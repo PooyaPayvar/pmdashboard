@@ -29,7 +29,7 @@ function Dashboard() {
           {earningData.map((item) => (
             <div
               key={item.title}
-              className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl "
+              className="bg-gray-200 h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl "
             >
               <button
                 type="button"

@@ -36,7 +36,7 @@ function TechnicianSubmit() {
   };
 
   return (
-    <div id="body">
+    <div className="body dark:bg-secondary-dark-bg rounded-3xl">
       <div className="container">
         <header>Technician Submit Form</header>
         <form onSubmit={handleSubmit}>

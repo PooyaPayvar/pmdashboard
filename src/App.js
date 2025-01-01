@@ -21,6 +21,7 @@ import {
 
 import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
+import TechnicianSubmit from "./pages/TechnicianSubmit";
 
 const App = () => {
   const {
@@ -106,6 +107,10 @@ const App = () => {
                     <Route
                       path="/operatorsubmit"
                       element={<OperatorSubmit />}
+                    />
+                    <Route
+                      path="/techniciansubmit"
+                      element={<TechnicianSubmit />}
                     />
                     <Route path="/kanban" element={<Kanban />} />
                     <Route path="/calendar" element={<Calendar />} />
