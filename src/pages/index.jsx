@@ -1,6 +1,5 @@
 export { default as Dashboard } from "./Dashboard";
 export { default as Kanban } from "./Kanban";
-export { default as Orders } from "./Orders";
 export { default as OperatorSubmit } from "./OperatorSubmit";
 export { default as TechnicianSubmit } from "./TechnicianSubmit";
 export { default as Login } from "./Login";
